@@ -8,7 +8,7 @@ public class ArregloUnidimensionalTest {
 	public static void main(String[] args) {
 
 		int[] array = {9,5,11,3,7,6,2,11,6,8,2,4,11,11,5,8,2,3,1,7,5};
-		Unidimencional numerosUnidimensionales = new Unidimencional(array);
+		Unidimensional numerosUnidimensionales = new Unidimensional(array);
 		
 		System.out.println("Vector : "+numerosUnidimensionales.toString());
 		System.out.println("Menor: "+numerosUnidimensionales.traerElMenor());

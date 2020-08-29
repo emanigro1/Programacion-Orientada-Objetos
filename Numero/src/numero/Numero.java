@@ -16,6 +16,11 @@ public class Numero {
 		this.n = n;
 	}
 
+	@Override
+	public String toString() {
+		return "Numero [n=" + n + "]";
+	}
+
 	public int sumar(int n1) {
 		return n + n1;
 	}
@@ -42,15 +47,15 @@ public class Numero {
 	}
 
 	public double convertirADouble() {
-		return Double.parseDouble(String.valueOf(n));
+		return Double.parseDouble(convertirAString());
 	}
 
 	public double calcularPotencia(double exp) {
-		return Math.pow(Double.parseDouble(String.valueOf(n)), exp);
+		return Math.pow(convertirADouble(), exp);
 	}
 
 	public String pasarBase2() {
-		return Long.toBinaryString(Long.parseLong(String.valueOf(n)));
+		return Long.toBinaryString(Long.parseLong(convertirAString()));
 	}
 
 	public int calcularFactorial() {
@@ -63,28 +68,15 @@ public class Numero {
 		return factorial;
 	}
 
-
-
 	public int calcularCombinatorio(int n1) {
-		int combinatoria = 0, resultado = 0, factorial1 = 1, factorial2 = 1, factorial3 = 1;
-
-		if (this.n > n1) {
-		return	combinatoria = 1;
-		}
-		if (this.n > 0 && n1 > 0) {
-			for (int i = 1; i <= this.n; i++) {
-				factorial1 = factorial1 * i;
-			}
-			for (int j = 1; j <= n1; j++) {
-				factorial2 = factorial2 * j;
-			}
-			resultado = this.n - n1;
-			for (int k = 1; k <= resultado; k++) {
-				factorial3 = factorial3 * k;
-			}
+		int combinatoria;
+		int factorial1 = calcularFactorial();
+		int factorial2 = new Numero(n1).calcularFactorial();		
+		if (this.n > 0 && n1 > 0 && this.n > n1) {
+			int factorial3 = new Numero(this.n - n1).calcularFactorial();
 			combinatoria = (factorial1 / (factorial2 * factorial3));
+			return combinatoria;
 		}
-		return combinatoria;
+		return 1;
 	}
-
 }

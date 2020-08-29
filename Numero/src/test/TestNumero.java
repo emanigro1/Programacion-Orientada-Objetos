@@ -5,8 +5,8 @@ import numero.*;
 public class TestNumero {
 
 	public static void main(String[] args) {
-		Numero n = new Numero(2);
-
+		Numero n = new Numero(5);
+System.out.println(n.toString());
 		System.out.println("Suma: " + n.sumar(10));
 		System.out.println("Multiplicacion: " + n.multiplicar(3));
 		System.out.println("Es par ? " + n.esPar());

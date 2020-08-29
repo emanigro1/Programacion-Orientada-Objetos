@@ -48,9 +48,9 @@ public class Punto {
 	}
 
 	public double calcularDistancia(Punto p) {
-		double distancia;
-		distancia = Math.abs(Math.sqrt(Math.pow(p.y - this.y, 2.0) + Math.pow(p.x - this.x, 2.0)));
-		return distancia;
+		
+		return Math.abs(Math.sqrt(Math.pow(p.y - this.y, 2.0) + Math.pow(p.x - this.x, 2.0)));
+	
 	}
 
 }
