@@ -49,18 +49,15 @@ public abstract class Persona {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public int calcularEdad(LocalDate fechaNacimiento1) {
-		LocalDate fechaAhora = LocalDate.now();
-		int año = fechaAhora.getYear() - fechaNacimiento1.getYear();
-		if (fechaAhora.getMonthValue() < fechaNacimiento1.getMonthValue()
-				|| fechaAhora.getMonthValue() == fechaNacimiento1.getMonthValue()
-						&& fechaAhora.getDayOfMonth() < fechaNacimiento1.getDayOfMonth()) {
+	public int calcularEdad(LocalDate fechaAhora) {
+
+		int año = fechaAhora.getYear() - fechaNacimiento.getYear();
+		if (fechaAhora.getMonthValue() < fechaNacimiento.getMonthValue()
+				|| fechaAhora.getMonthValue() == fechaNacimiento.getMonthValue()
+						&& fechaAhora.getDayOfMonth() < fechaNacimiento.getDayOfMonth()) {
 			return --año;
 		}
 		return año;
 	}
-
-	public abstract String hablar();
-
 
 }

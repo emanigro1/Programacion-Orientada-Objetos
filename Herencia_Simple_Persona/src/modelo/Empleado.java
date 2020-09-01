@@ -2,10 +2,10 @@ package modelo;
 
 import java.time.LocalDate;
 
-public class Empleado extends Persona {
+public abstract class Empleado extends Persona {
 
-	private long legajo;
-	private float sueldoMensual;
+	protected  long legajo;
+	protected  float sueldoMensual;
 
 	public Empleado(String nombre, String apellido, long dni, LocalDate fechaNacimiento, long legajo,
 			float sueldoMensual) {
@@ -32,12 +32,5 @@ public class Empleado extends Persona {
 		this.sueldoMensual = sueldoMensual;
 	}
 
-	public String hablar() {
-		return "Soy un Empleado";
-	}
-
-	public float calcularSueldo(int diasAusente) {
-		float sueldo=30000;		
-		return sueldo-(diasAusente*1000);
-	}
+	public abstract float calcularSueldo(int diasAusente);
 }

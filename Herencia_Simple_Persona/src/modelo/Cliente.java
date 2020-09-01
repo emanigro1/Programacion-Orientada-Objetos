@@ -10,7 +10,6 @@ public class Cliente extends Persona {
 	public Cliente(String nombre, String apellido, long dni, LocalDate fechaNacimiento, String cuit,
 			float limiteCredito) {
 		super(nombre, apellido, dni, fechaNacimiento);
-		// TODO Auto-generated constructor stub
 		this.setCuit(cuit);
 		this.setLimiteCredito(limiteCredito);
 	}
@@ -31,11 +30,7 @@ public class Cliente extends Persona {
 		this.limiteCredito = limiteCredito;
 	}
 
-	public String hablar() {
-		return "Soy un Cliente";
-	}
-
-	public String estadoCredito() {
-		return "Sin deuda";
+	public boolean estadoCredito() {
+		return false;
 	}
 }
