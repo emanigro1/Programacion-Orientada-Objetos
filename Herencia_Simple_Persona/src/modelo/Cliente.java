@@ -30,7 +30,18 @@ public class Cliente extends Persona {
 		this.limiteCredito = limiteCredito;
 	}
 
-	public boolean estadoCredito() {
-		return false;
+	@Override
+	public String toString() {
+		return "Cliente [cuit=" + cuit + ", limiteCredito=" + limiteCredito +", "+ super.toString() +"]";
 	}
+
+	public boolean estadoCredito() {
+		return limiteCredito != 0;
+	}
+
+	@Override
+	public String hablar() {
+		return "Soy un cliente";
+	}
+
 }

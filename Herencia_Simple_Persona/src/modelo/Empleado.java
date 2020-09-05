@@ -2,19 +2,17 @@ package modelo;
 
 import java.time.LocalDate;
 
-public abstract class Empleado extends Persona {
+public class Empleado extends Persona {
 
-	protected  long legajo;
-	protected  float sueldoMensual;
+	private long legajo;
+	private float sueldoMensual;
 
 	public Empleado(String nombre, String apellido, long dni, LocalDate fechaNacimiento, long legajo,
 			float sueldoMensual) {
 		super(nombre, apellido, dni, fechaNacimiento);
-		this.setLegajo(legajo);
-		this.setFechaNacimiento(fechaNacimiento);
+		this.legajo = legajo;
+		this.sueldoMensual = sueldoMensual;
 	}
-
-	// Agregar Getters y Setters
 
 	public long getLegajo() {
 		return legajo;
@@ -31,6 +29,16 @@ public abstract class Empleado extends Persona {
 	public void setSueldoMensual(float sueldoMensual) {
 		this.sueldoMensual = sueldoMensual;
 	}
+	
+	public float calcularSueldo(int diasAusente) {
+		return sueldoMensual - diasAusente * (sueldoMensual / 30);
+	}
 
-	public abstract float calcularSueldo(int diasAusente);
+	@Override
+	public String hablar() {
+		return "Soy un Empleado";
+	}
+	
+	
+
 }

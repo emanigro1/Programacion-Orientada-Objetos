@@ -2,7 +2,7 @@ package modelo;
 
 import java.time.LocalDate;
 
-public abstract class Persona {
+public class Persona {
 	protected String nombre;
 	protected String apellido;
 	protected long dni;
@@ -14,8 +14,6 @@ public abstract class Persona {
 		this.setDni(dni);
 		this.setFechaNacimiento(fechaNacimiento);
 	}
-
-	// Agregar Getters y Setters
 
 	public String getNombre() {
 		return nombre;
@@ -47,7 +45,14 @@ public abstract class Persona {
 
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
+	}	
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", fechaNacimiento="
+				+ fechaNacimiento + "]";
 	}
+
 
 	public int calcularEdad(LocalDate fechaAhora) {
 
@@ -58,6 +63,10 @@ public abstract class Persona {
 			return --año;
 		}
 		return año;
+	}
+
+	public String hablar() {
+		return "Soy una persona";
 	}
 
 }
