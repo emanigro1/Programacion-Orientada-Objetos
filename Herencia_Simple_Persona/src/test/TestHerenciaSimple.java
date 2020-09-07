@@ -6,7 +6,7 @@ import modelo.Cliente;
 
 import java.time.LocalDate;
 
-public class testHerenciaSimple {
+public class TestHerenciaSimple {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
