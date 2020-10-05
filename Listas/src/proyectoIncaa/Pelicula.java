@@ -40,7 +40,7 @@ public class Pelicula {
 	public String toString() {
 		return "[ idPelicula= " + idPelicula + ", nombre= " + nombre + ", genero= " + genero + " ]";
 	}
-	
+
 	// COMPARAR IGUALDAD CON OBJETO
 	public boolean equals(Pelicula pelicula) {
 		if (idPelicula == pelicula.getIdPelicula() || genero == pelicula.getGenero()
@@ -49,22 +49,26 @@ public class Pelicula {
 		}
 		return false;
 	}
+
 	public boolean equals(int id) {
 		if (this.idPelicula == id) {
 			return true;
 		}
 		return false;
 	}
+
 	public boolean equals(String nombre) {
 		if (this.nombre == nombre) {
 			return true;
 		}
 		return false;
 	}
+
 	public boolean equals(Genero genero) {
 		if (this.genero == genero) {
 			return true;
 		}
 		return false;
 	}
+
 }

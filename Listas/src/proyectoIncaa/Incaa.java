@@ -5,48 +5,32 @@ import java.util.List;
 
 public class Incaa {
 
-	List<Pelicula> catalogo;
+	ArrayList<Pelicula> catalogo;
 
 	// METODOS COMUNES
 	public Incaa() {
 		this.catalogo = new ArrayList<Pelicula>();
 	}
 
-		public List<Pelicula> getCatalogo() {
+	public List<Pelicula> getCatalogo() {
 		return catalogo;
 	}
 
-		public void setCatalogo(ArrayList<Pelicula> catalogo) {
+	public void setCatalogo(ArrayList<Pelicula> catalogo) {
 		this.catalogo = catalogo;
 	}
 
 	@Override
-		public String toString() {
+	public String toString() {
 		return catalogo.toString();
 	}
 
-	// ALTA PELICULA
-	public void agregarPelicula(Pelicula pelicula) throws Exception {
-		int i = 0;
-
-		while (i < catalogo.size()) {
-			if (catalogo.get(i).equals(pelicula.getIdPelicula()))
-				throw new Exception(pelicula + " no se pudo agregar, ID existente=" + catalogo.get(i));
-
-			if (catalogo.get(i).equals(pelicula.getNombre()))
-				throw new Exception(pelicula + " no se pudo agregar, nombre de pelicula existente=" + catalogo.get(i));
-
-			i++;
-		}
-		catalogo.add(pelicula);
-
-	}
-
-	public void agregarPelicula(int idPelicula, String nombre, Genero genero) throws Exception {
+	public boolean agregarPelicula(int idPelicula, String nombre, Genero genero) throws Exception {
 
 		int i = 0;
 
 		while (i < catalogo.size()) {
+
 			if (catalogo.get(i).equals(idPelicula))
 				throw new Exception(nombre + " no se pudo agregar, ID existente=" + catalogo.get(i));
 
@@ -55,30 +39,10 @@ public class Incaa {
 
 			i++;
 		}
-		Pelicula peliculaNueva = new Pelicula(idPelicula, nombre, genero);
-		catalogo.add(peliculaNueva);
-
-	}
-	public boolean agregarPelicula(String nombre, Genero genero) throws Exception {
-
-		int i = 0, idPelicula = 1;
-
-		while (i < catalogo.size()) {
-			if (catalogo.get(i).equals(nombre))
-				throw new Exception(nombre + " no se pudo agregar, nombre de pelicula existente=" + catalogo.get(i));
-
-			if (catalogo.get(i).getIdPelicula() == i + 1) {
-				idPelicula = i + 2;
-			}
-
-			i++;
-		}
 
 		Pelicula peliculaNueva = new Pelicula(idPelicula, nombre, genero);
-		catalogo.add(peliculaNueva);
 
-		return true;
-
+		return catalogo.add(peliculaNueva);
 	}
 
 	// TRAER PELICULA
@@ -92,6 +56,7 @@ public class Incaa {
 		}
 		return null;
 	}
+
 	public Pelicula traerPelicula(int id) {
 		int i = 0;
 		while (i < catalogo.size()) {
@@ -129,7 +94,7 @@ public class Incaa {
 	public void modificarGenero(int idPelicula, Genero genero) throws Exception {
 
 		if (traerPelicula(idPelicula) == null)
-			throw new Exception("La pelicula con ese ID no existe");
+			throw new Exception("El genero con ese ID no existe");
 
 		traerPelicula(idPelicula).setGenero(genero);
 	}
@@ -139,7 +104,8 @@ public class Incaa {
 
 		if (traerPelicula(idPelicula) == null)
 			throw new Exception("La pelicula con ese ID no existe");
-		
+
 		return catalogo.remove(traerPelicula(idPelicula));
 	}
+
 }

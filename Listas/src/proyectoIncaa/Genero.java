@@ -5,17 +5,19 @@ public class Genero {
 	private String nombre;
 
 	public Genero(int idGenero, String nombre) {
-		this.setIdGenero(idGenero);
+
 		this.setNombre(nombre);
+		this.setIdGenero(idGenero);
+
 	}
 
 	public int getIdGenero() {
-		
+
 		return idGenero;
 	}
 
-	public void setIdGenero(int idGenero) {
-		this.idGenero = idGenero;
+	public void setIdGenero(int id) {
+		this.idGenero = id;
 	}
 
 	public String getNombre() {
