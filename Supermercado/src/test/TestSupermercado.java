@@ -41,16 +41,15 @@ public class TestSupermercado {
 			// Agrego items al carrito
 			dia.getAdmCarrito().traerCarrito(1).agregarItem(dia.getAdmProducto().traerProducto(1), 2);
 			dia.getAdmCarrito().traerCarrito(1).agregarItem(dia.getAdmProducto().traerProducto(2), 4);
-			dia.getAdmCarrito().traerCarrito(1).eliminarItem(4);
 			dia.getAdmCarrito().traerCarrito(1).agregarItem(dia.getAdmProducto().traerProducto(3), 6);
 			dia.getAdmCarrito().traerCarrito(1).agregarItem(dia.getAdmProducto().traerProducto(4), 1);
 			dia.getAdmCarrito().traerCarrito(1).agregarItem(dia.getAdmProducto().traerProducto(5), 7);
+			dia.getAdmCarrito().traerCarrito(1).eliminarItem(4);
 			
 			// calculo total
 			System.out.println(dia.getAdmCarrito().traerCarrito(1).calcularTotal());
 
-			// carrito1.eliminarItem(manteca,14);
-
+			
 		} catch (Exception e) {
 			System.out.println("Excepcion: " + e.getMessage());
 		}
