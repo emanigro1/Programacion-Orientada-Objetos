@@ -8,7 +8,6 @@ public abstract class Mensaje {
 								// cada vezque se agrega un elemento a lista de mensajes
 	protected LocalDate fechaEnvio;
 	protected LocalTime horaEnvio;
-	static int idAutomatica = 0;
 
 	protected Mensaje(LocalDate fechaEnvio, LocalTime horaEnvio) throws Exception {
 		this.fechaEnvio = fechaEnvio;
@@ -20,9 +19,8 @@ public abstract class Mensaje {
 		return idMensaje;
 	}
 
-	protected void setIdMensaje() {
-		idAutomatica++;
-		this.idMensaje = idAutomatica;
+	protected void setIdMensaje(int id) {
+		this.idMensaje = id;
 	}
 
 	protected LocalDate getFechaEnvio() {
@@ -46,6 +44,6 @@ public abstract class Mensaje {
 		return "Mensaje [idMensaje=" + idMensaje + ", fechaEnvio=" + fechaEnvio + ", horaEnvio=" + horaEnvio + "]";
 	}
 
-	public abstract boolean cambiarDeEstado(boolean estadoNuevo);
+	public abstract void cambiarDeEstado(boolean estadoNuevo);
 
 }

@@ -20,5 +20,9 @@ public class OperadorMovil {
 	protected void setCompaniaMovil(String companiaMovil) {
 		this.companiaMovil = companiaMovil;
 	}
+	@Override
+	public String toString() {
+		return "OperadorMovil [codigoMovil=" + codigoMovil + ", companiaMovil=" + companiaMovil + "]";
+	}
 	
 }

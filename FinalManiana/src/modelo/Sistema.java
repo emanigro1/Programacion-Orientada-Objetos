@@ -19,12 +19,17 @@ public class Sistema {
 		this.listaMensajes = listaMensajes;
 	}
 
+	@Override
+	public String toString() {
+		return "Sistema [listaMensajes=" + listaMensajes + "]";
+	}
+
 	public boolean agregarEmail(LocalDate fechaEnvio, LocalTime horaEnvio, String origen, String destino, String asunto,
 			String cuerpo) throws Exception {
 		// El atributo recibido se inicializará por defecto en falso.
 		Mensaje email = new Email(fechaEnvio, horaEnvio, origen, destino, asunto, cuerpo);
 		listaMensajes.add(email);
-		email.setIdMensaje();
+		email.setIdMensaje(listaMensajes.size());
 		return true;
 	}
 
@@ -34,7 +39,7 @@ public class Sistema {
 		Mensaje sms = new SMS(fechaEnvio, horaEnvio, numeroOrigen, numeroDestino, texto, operadorOrigen,
 				operadorDestino);
 		listaMensajes.add(sms);
-		sms.setIdMensaje();
+		sms.setIdMensaje(listaMensajes.size());
 		return true;
 
 	}
@@ -95,8 +100,13 @@ public class Sistema {
 									 * código compañía con la compañía que ingresa como parámetro
 									 */
 		ArrayList<Mensaje> mensajesTraidos = new ArrayList<Mensaje>();
-		mensajesTraidos.addAll(traerMensaje(codigoCompania));
 		mensajesTraidos.addAll(traerMensaje(fecha, horaDesde, horaHasta));
+		for (Mensaje mensaje : mensajesTraidos) {
+			if (!((SMS) mensaje).equals(codigoCompania)) {
+				mensajesTraidos.remove(mensaje);
+			}
+		}
+
 		return mensajesTraidos;
 	}
 

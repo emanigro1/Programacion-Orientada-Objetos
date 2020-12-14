@@ -81,9 +81,8 @@ public class Email extends Mensaje {
 				+ horaEnvio + "]";
 	}
 
-	public boolean cambiarDeEstado(boolean estadoNuevo) {
+	public void cambiarDeEstado(boolean estadoNuevo) {
 		setRecibido(estadoNuevo);
-		return true;
 	}
 
 }

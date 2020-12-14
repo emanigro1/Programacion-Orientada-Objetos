@@ -98,8 +98,7 @@ public class SMS extends Mensaje {
 		return encontrado;
 	}
 
-	public boolean cambiarDeEstado(boolean estadoNuevo) {
+	public void cambiarDeEstado(boolean estadoNuevo) {
 		setVisto(estadoNuevo);
-		return true;
 	}
 }
