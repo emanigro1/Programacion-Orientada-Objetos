@@ -40,6 +40,7 @@ public class ClienteABM {
 	}
 
 	public List<Cliente> traer() {
+		
 		return dao.traer();
 	}
 }

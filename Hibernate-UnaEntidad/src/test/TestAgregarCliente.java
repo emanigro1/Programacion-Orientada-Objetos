@@ -5,9 +5,9 @@ import negocio.ClienteABM;
 
 public class TestAgregarCliente {
 	public static void main(String[] args) {
-		String apellido = "Fernandez";
-		String nombre = "Lucas";
-		int documento = 35985217;
+		String apellido = "Silvester";
+		String nombre = "Pepe";
+		int documento = 35936323;
 // tu fecha de nacimiento
 		LocalDate fechaDeNacimiento = LocalDate.now();
 		ClienteABM abm = new ClienteABM();
