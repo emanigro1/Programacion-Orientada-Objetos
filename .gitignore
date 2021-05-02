@@ -1,4 +1,4 @@
 /Almacen-Granate/
-lib/
-.metadata/
-Hibernate-Uno-a-Uno/
+/lib/
+/.metadata/
+/Hibernate-Uno-a-Muchos/
