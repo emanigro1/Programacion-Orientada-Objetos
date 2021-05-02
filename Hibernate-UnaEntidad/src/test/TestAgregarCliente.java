@@ -13,6 +13,7 @@ public class TestAgregarCliente {
 		ClienteABM abm = new ClienteABM();
 		try {
 			long ultimoIdCliente = abm.agregar(apellido, nombre, documento, fechaDeNacimiento);
+			System.out.println("Cliente id "+ultimoIdCliente+" agregado con exito");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
